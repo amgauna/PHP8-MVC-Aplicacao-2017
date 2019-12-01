@@ -1,7 +1,0 @@
-$ composer init --require=foo/bar:1.0.0 -n
-$ cat composer.json
-{
-    "require": {
-        "foo/bar": "1.0.0"
-    }
-}
