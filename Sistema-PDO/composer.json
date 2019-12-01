@@ -1,24 +1,7 @@
+$ composer init --require=foo/bar:1.0.0 -n
+$ cat composer.json
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Seldaek/monolog"
-        },
-        {
-            "type": "pear",
-            "url": "https://pear2.php.net"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "smarty/smarty",
-                "version": "3.1.7",
-                "dist": {
-                    "url": "https://www.smarty.net/files/Smarty-3.1.7.zip",
-                    "type": "zip"
-                    "reference": "tags/Smarty_3_1_7/distribution/"
-                },   
-            }
-        }
-    ]
+    "require": {
+        "foo/bar": "1.0.0"
+    }
 }
