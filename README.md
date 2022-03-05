@@ -12,16 +12,16 @@ Este erro de definição acontece pois em nenhum lugar está escrito que a quant
 
 As camadas do MVC
 
-O que é Model? Model é onde fica a lógica da aplicação. Só isso.
+1) O que é Model? Model é onde fica a lógica da aplicação. Só isso.
 
 Vai disparar um e-mail? Validar um formulário? Enviar ou receber dados do banco? Não importa. A model deve saber como executar as tarefas mais diversa, mas não precisa saber quando deve ser feito, nem como mostrar estes dados.
 
-O que é View?
+2) O que é View?
 View exibe os dados. Só isso.
 
 View não é só o HTML, mas qualquer tipo de retorno de dados, como PDF, Json, XML, o retorno dos dados do servidor RESTFull, os tokens de autenticação OAuth2, entre outro. Qualquer retorno de dados para uma interface qualquer (o navegador, por exemplo) é responsabilidade da view. A view deve saber renderizar os dados corretamente, mas não precisa saber como obtê-los ou quando renderizá-los.
 
-O que é Controller? O controller diz quando as coisas devem acontecer. Só isso.
+3) O que é Controller? O controller diz quando as coisas devem acontecer. Só isso.
 
 É usado para intermediar a model e a view de uma camada. Por exemplo, para pegar dados da model (guardados em um banco) e exibir na view (em uma página HTML), ou pegar os dados de um formulário (view) e enviar para alguém (model). Também é responsabilidade do controller cuidar das requisições (request e response) e isso também inclui os famosos middlewares (Laravel, Slim Framework, Express, Ruby on Rails, etc.). O controller não precisa saber como obter os dados nem como exibi-los, só quando fazer isso.
 
