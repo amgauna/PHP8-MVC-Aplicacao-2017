@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
  
-        <title>Sistema de Cadastro em MVC - ULTIAMTE PHP</title>
+        <title>Sistema de Cadastro em MVC</title>
     </head>
  
     <body>
