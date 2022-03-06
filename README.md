@@ -12,18 +12,11 @@ Este erro de definição acontece pois em nenhum lugar está escrito que a quant
 
 As camadas do MVC
 
-1) O que é Model? Model é onde fica a lógica da aplicação. Só isso.
+1) O que é Model? Model é onde fica a lógica da aplicação. Só isso. Vai disparar um e-mail? Validar um formulário? Enviar ou receber dados do banco? Não importa. A model deve saber como executar as tarefas mais diversa, mas não precisa saber quando deve ser feito, nem como mostrar estes dados.
 
-Vai disparar um e-mail? Validar um formulário? Enviar ou receber dados do banco? Não importa. A model deve saber como executar as tarefas mais diversa, mas não precisa saber quando deve ser feito, nem como mostrar estes dados.
+2) O que é View? View exibe os dados. Só isso. View não é só o HTML, mas qualquer tipo de retorno de dados, como PDF, Json, XML, o retorno dos dados do servidor RESTFull, os tokens de autenticação OAuth2, entre outro. Qualquer retorno de dados para uma interface qualquer (o navegador, por exemplo) é responsabilidade da view. A view deve saber renderizar os dados corretamente, mas não precisa saber como obtê-los ou quando renderizá-los.
 
-2) O que é View?
-View exibe os dados. Só isso.
-
-View não é só o HTML, mas qualquer tipo de retorno de dados, como PDF, Json, XML, o retorno dos dados do servidor RESTFull, os tokens de autenticação OAuth2, entre outro. Qualquer retorno de dados para uma interface qualquer (o navegador, por exemplo) é responsabilidade da view. A view deve saber renderizar os dados corretamente, mas não precisa saber como obtê-los ou quando renderizá-los.
-
-3) O que é Controller? O controller diz quando as coisas devem acontecer. Só isso.
-
-É usado para intermediar a model e a view de uma camada. Por exemplo, para pegar dados da model (guardados em um banco) e exibir na view (em uma página HTML), ou pegar os dados de um formulário (view) e enviar para alguém (model). Também é responsabilidade do controller cuidar das requisições (request e response) e isso também inclui os famosos middlewares (Laravel, Slim Framework, Express, Ruby on Rails, etc.). O controller não precisa saber como obter os dados nem como exibi-los, só quando fazer isso.
+3) O que é Controller? O controller diz quando as coisas devem acontecer. Só isso. É usado para intermediar a model e a view de uma camada. Por exemplo, para pegar dados da model (guardados em um banco) e exibir na view (em uma página HTML), ou pegar os dados de um formulário (view) e enviar para alguém (model). Também é responsabilidade do controller cuidar das requisições (request e response) e isso também inclui os famosos middlewares (Laravel, Slim Framework, Express, Ruby on Rails, etc.). O controller não precisa saber como obter os dados nem como exibi-los, só quando fazer isso.
 
 Na prática. Uma sugestão aos desenvolvedores é criar seu próprio framework de estudo (e publicar no GitHub) mas nunca os usar em produção. Esta prática te faz compreender o quanto você conhece da linguagem, e daqui a algum tempo, ver o quanto melhorou.
 
@@ -31,11 +24,7 @@ Neste estudo, vamos criar uma aplicação MVC simples com PHP, usando práticas 
 
 Para começar, vamos utilizar a ideia de que não devemos criar nada que já existe: este é o princípio da interoperabilidade buscada pelo PHP-FIG (grupo formado pelas principais empresas e grupos PHP para definir boas práticas e padrões). Utilizaremos PSR-4 e Composer para gerenciar o carregamento das classes.
 
-Para instalar o Composer, cito uma parte do artigo Composer para iniciantes de Andre Cardoso aqui no Tableless:
-
-Primeiramente você precisa realizar o download do phar do composer. O phar é um empacotamento de uma aplicação e é utilizado para fornecer bibliotecas e ferramentas nas quais o desenvolvedor não tem de se preocupar com sua estrutura. Em outras palavras, é pegar e usar.
-
-Para que você obtenha o composer há duas maneiras distintas. Através da biblioteca cURL e através do próprio PHP. Basta selecionar uma das opções abaixo e executar em seu terminal.
+Para instalar o Composer, cito uma parte do artigo Composer para iniciantes de Andre Cardoso aqui no Tableless:  Primeiramente você precisa realizar o download do phar do composer. O phar é um empacotamento de uma aplicação e é utilizado para fornecer bibliotecas e ferramentas nas quais o desenvolvedor não tem de se preocupar com sua estrutura. Em outras palavras, é pegar e usar. Para que você obtenha o composer há duas maneiras distintas. Através da biblioteca cURL e através do próprio PHP. Basta selecionar uma das opções abaixo e executar em seu terminal.
 
 Instalando via cURL:
 
@@ -55,11 +44,7 @@ Na raiz do diretório do seu projeto crie estes 5 arquivos (e diretórios):
 * composer.json
 * index.php
 
-Ao baixar o composer.phar (explicado acima) você também o terá no diretório raiz, junto ao composer.json e ao index.php
-
-O seu arquivo composer.json deverá ter o conteúdo a seguir:
-
-Rode o comando php composer.phar install.
+Ao baixar o composer.phar (explicado acima) você também o terá no diretório raiz, junto ao composer.json e ao index.php  O seu arquivo composer.json deverá ter o conteúdo a seguir:  Rode o comando php composer.phar install.
 
 A ideia é que o nosso controller carregue as informações da _model _e as envie para a view. Pensando nisso, faremos com que o controller carregue ambas as classes: Model e View. 
 
